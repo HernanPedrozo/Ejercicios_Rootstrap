@@ -5,11 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi primer página web</title>
+    <link rel="stylesheet" href="estilos.css" />
+    <script src="index.js"></script>
+
 </head>
 
 <body>
 
-    <nav id="titulo">
+    <nav id="navBar">
         <ul>
             <li>inicio</li>
             <li>galeria</li>
@@ -36,7 +39,7 @@
     </div>
     <!-- Tabla -->
     <div>
-        <table>
+        <table class="table">
             <tr>
                 <th>Nombre</th>
                 <th>Edad</th>
@@ -54,7 +57,7 @@
 
     <!-- formulario -->
     <div>
-        <form action="">
+        <form class="form" action="">
             <label for="nombre">Nombre:</label>
             <input type="text">
             <label for="nombre">Correo electronico</label>
@@ -64,6 +67,8 @@
     </div>
 
     <a href="#titulo">ir a un indicador</a>
+
+    <div id="app"></div>
 
     <footer>
         <p>redes sociales</p>

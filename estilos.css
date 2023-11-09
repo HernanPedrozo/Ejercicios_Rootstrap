@@ -1,0 +1,21 @@
+#navBar {
+color: rgb(255, 0, 0) ;
+}
+
+.table{
+    background-color: orange;
+}
+
+.form{
+    background-color: #0000ff;
+}
+
+h1{
+    color: violet;
+    font-size: 24 px;
+}
+
+p{
+    font-size: 18 px;
+    
+}
