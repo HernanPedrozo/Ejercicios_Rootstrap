@@ -1,3 +1,95 @@
+class Calculator{
+    constructor(operand1Element, operand2Element){
+        this.operand1Element = operand1Element;
+        this.operand2Element = operand2Element;
+        this.clear();
+    }
+
+    clear () {
+        this.operand1 = 0;
+        this.operand2 = 0;
+        this.operator = '';
+        this.updateUI();
+    }
+
+    updateUI(){
+        this.operand1Element.innerHTML = this.operand1 + this.operator;
+        this.operand2Element.innerHTML = this.operand2;     
+    }
+
+    appendNumber(number){
+        if (number === "."  && this.operand2.includes(".")) return;
+        
+        this.operand2 = this.operand2 === 0 ? number : this.operand2.toString() + number;
+
+        this.updateUI();
+    }
+
+    operation(operator){
+        if(this.operator){
+            this.calc();
+        }
+        this.operator = operator;
+        this.operand1 = +this.operand2 === 0 ? this.operand1 : this.operand2;
+        this.operand2 = 0;
+        this.updateUI();
+    }
+
+    calc(){
+        switch(this.operator){
+            case "+":
+                this.operand1 = +this.operand1 + +this.operand2;
+                break;
+            case "-":
+                this.operand1 = +this.operand1 - +this.operand2;
+                break;
+            case "*":
+                this.operand1 = +this.operand1 * +this.operand2;
+                break;
+            case "/":
+                this.operand1 = +this.operand1 / +this.operand2;
+                break;
+    }
+    this.operator = "";
+    this.operand2 = 0;
+    this.updateUI();
+}
+
+}
+const operand1Element = document.querySelector("[data-operand-1]");
+const operand2Element = document.querySelector("[data-operand-2]");
+const clearButton = document.querySelector("[data-clear]");
+const numberButton = document.querySelectorAll("[data-number]");
+const operationButton = document.querySelectorAll("[data-operation]");
+const equalButton = document.querySelector("[data-equals]");
+clearButton.addEventListener("click", () =>{
+    calculator.clear();
+})
+
+numberButton.forEach(button =>{
+    button.addEventListener("click", () =>{
+        calculator.appendNumber(button.innerHTML);
+    })
+})
+
+operationButton.forEach(button=>{
+    button.addEventListener("click", () =>{
+        calculator.operation(button.innerHTML);
+    });
+});
+
+equalButton.addEventListener("click", () =>{
+    calculator.calc();
+
+});
+
+const calculator = new Calculator(operand1Element, operand2Element);
+
+
+
+
+
+/*
 function sum(a, b) {
     return a + b;
 }
@@ -14,7 +106,9 @@ function divide(a, b) {
     return a / b;
 }
 
-function calculator(a, b, operation) {
+*/
+/*
+function calculatorOperator(a, b, operation) {
     if (typeof a === "string") {
         console.log("Operación inválida");
     } else if (typeof b === "string") {
@@ -43,11 +137,11 @@ function calculator(a, b, operation) {
         }
     }
 }
-calculator(1, 2, '+');
-calculator('1', 2, '+');
-calculator('a', 1, '+');
-calculator(1, 2, 'hi');
-
+calculatorOperator(1, 2, '+');
+calculatorOperator('1', 2, '+');
+calculatorOperator('a', 1, '+');
+calculatorOperator(1, 2, 'hi');
+*/
 
 
 /*
