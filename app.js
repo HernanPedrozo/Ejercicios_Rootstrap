@@ -94,4 +94,28 @@ console.log(camila.estudiar())
 
 /* Ejercicio 11 */
 import { numb } from './ejercicio_11.js';
-numb(2).then( (result) => console.log('result is: ' + result) )
+resultCuadrado(2).then( (result) => console.log('result is: ' + result) )
+
+/* Ejercicio 12 */
+
+operator(2).then( (result) => console.log('result is: ' + result) )
+
+
+/* Ejercicio 13 */
+
+async function asyncError(a) { 
+    try {
+
+        } catch (error) {
+            console.log()
+
+        }
+        
+
+};
+
+/* Ejercicio 14 */
+
+localStorage.setItem("resultadoElevadoAlCuadrado", resultCuadrado(2));
+const result2 = localStorage.getItem("resultadoElevadoAlCuadrado");
+console.log(result);
