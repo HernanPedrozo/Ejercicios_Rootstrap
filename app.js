@@ -1,4 +1,3 @@
-
 /* Ejercicio 1 */
 const nombre = "Hernan";
 let age = 24;
@@ -85,37 +84,45 @@ class Estudiante extends Persona {
 
     estudiar() {
         return `Su nombre es ${this.nom}, tiene ${this.edad} años y esta en ${this.curso}.`;
-    }        
+    }
 }
 
-const camila = new Estudiante ("Camila", "11", "6° grado")
+const camila = new Estudiante("Camila", "11", "6° grado")
 
 console.log(camila.estudiar())
 
 /* Ejercicio 11 */
-import { numb } from './ejercicio_11.js';
-resultCuadrado(2).then( (result) => console.log('result is: ' + result) )
+import {
+    numb
+} from './ejercicio_11.js';
+resultCuadrado(2).then((result) => console.log('result is: ' + result))
 
 /* Ejercicio 12 */
 
-operator(2).then( (result) => console.log('result is: ' + result) )
+operator(2).then((result) => console.log('result is: ' + result))
 
 
 /* Ejercicio 13 */
 
-async function asyncError(a) { 
-    try {
-
-        } catch (error) {
-            console.log()
-
-        }
-        
-
+const funcionErr = (num) => {
+    if (num < 0) {
+        throw new Error(`El número ${num} es negativo`);
+    }
 };
+
+const numPositive = (num) => {
+    try {
+        funcionErr(num);
+    } catch (error) {
+        console.error(error);
+    }
+};
+
+numPositive(-1);
+
 
 /* Ejercicio 14 */
 
-localStorage.setItem("resultadoElevadoAlCuadrado", resultCuadrado(2));
-const result2 = localStorage.getItem("resultadoElevadoAlCuadrado");
-console.log(result);
+localStorage.setItem("resultCuadrado", resultCuadrado(2));
+const result2 = localStorage.getItem("resultCuadrado");
+console.log(result2);
